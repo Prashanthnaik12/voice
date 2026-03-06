@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Header -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,22 +30,22 @@
                 android:id="@+id/tvOfflineBadge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="● OFFLINE"
+                android:text="OFFLINE"
                 android:textSize="11sp"
                 android:textColor="#10B981"
                 android:fontFamily="monospace"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/badge_bg"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp"/>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
         </RelativeLayout>
 
-        <!-- Language Selector -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Language / భాష / ಭಾಷೆ / भाषा"
+            android:text="Language"
             android:textColor="#94A3B8"
             android:textSize="13sp"
             android:layout_marginBottom="6dp"/>
@@ -55,11 +54,8 @@
             android:id="@+id/spinnerLanguage"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/spinner_bg"
-            android:padding="8dp"
             android:layout_marginBottom="20dp"/>
 
-        <!-- Mic Button & Waveform -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -68,17 +64,14 @@
             android:background="@drawable/card_bg"
             android:layout_marginBottom="16dp">
 
-            <!-- Waveform -->
             <LinearLayout
                 android:id="@+id/waveformContainer"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:paddingHorizontal="20dp"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Mic Button -->
             <ImageButton
                 android:id="@+id/btnMic"
                 android:layout_width="80dp"
@@ -88,7 +81,6 @@
                 android:contentDescription="Microphone"/>
         </LinearLayout>
 
-        <!-- Status -->
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
@@ -100,7 +92,6 @@
             android:fontFamily="monospace"
             android:layout_marginBottom="8dp"/>
 
-        <!-- Transcript -->
         <TextView
             android:id="@+id/tvTranscript"
             android:layout_width="match_parent"
@@ -111,7 +102,53 @@
             android:fontFamily="monospace"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Last Command Response -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wake Word: Hi Mama"
+                android:textColor="#E2E8F0"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Say Hi Mama to wake NOVA"
+                    android:textColor="#475569"
+                    android:textSize="12sp"/>
+
+                <Switch
+                    android:id="@+id/switchWakeWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvWakeStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wake word disabled"
+                android:textColor="#475569"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -138,63 +175,6 @@
                 android:textSize="15sp"/>
         </LinearLayout>
 
-        <!-- Wake Word Card -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/card_bg"
-            android:padding="16dp"
-            android:layout_marginBottom="12dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="🗣️ Wake Word: \"Hi Mama\""
-                        android:textColor="#E2E8F0"
-                        android:textSize="15sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Say 'Hi Mama' → NOVA wakes up"
-                        android:textColor="#475569"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-
-                <Switch
-                    android:id="@+id/switchWakeWord"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:thumbTint="#10B981"
-                    android:trackTint="#0D2E1F"/>
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tvWakeStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Wake word disabled"
-                android:textColor="#475569"
-                android:textSize="12sp"
-                android:fontFamily="monospace"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-
-        <!-- Background Service Toggle -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -220,7 +200,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Listen even when app is closed"
+                    android:text="Listen when app is closed"
                     android:textColor="#475569"
                     android:textSize="12sp"/>
             </LinearLayout>
@@ -228,12 +208,9 @@
             <Switch
                 android:id="@+id/switchBackground"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:thumbTint="#3B82F6"
-                android:trackTint="#1E3A5F"/>
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <!-- Quick Commands Reference -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -254,13 +231,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="🎤 \"Open WhatsApp\" / \"WhatsApp తెరవు\"\n🎵 \"Play music\" / \"పాట వేసు\"\n⏭ \"Next\" / \"తదుపరి\" / \"अगला\"\n⏮ \"Previous\" / \"వెనుకటి\"\n📞 \"Call Mama\" / \"Mama కి కాల్ చేయి\"\n👋 \"Hi mama\" → \"చెప్పు మామా\"\n🔊 \"Volume up\" / \"শব্দ বাড়াও\"\n💡 \"Torch on\" / \"టార్చ్ వేయి\""
+                android:text="Open WhatsApp / WhatsApp teravu\nPlay music / Paata vesu\nNext / Tadupari\nCall Mama\nHi mama - Cheppu Mama\nVolume up\nTorch on"
                 android:textColor="#64748B"
                 android:textSize="13sp"
                 android:lineSpacingExtra="4dp"/>
         </LinearLayout>
 
-        <!-- Action Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -275,7 +251,6 @@
                 android:layout_weight="1"
                 android:text="Custom Contacts"
                 android:textSize="13sp"
-                android:backgroundTint="#1E293B"
                 android:layout_marginEnd="8dp"/>
 
             <Button
@@ -285,7 +260,6 @@
                 android:layout_weight="1"
                 android:text="Settings"
                 android:textSize="13sp"
-                android:backgroundTint="#1E293B"
                 android:layout_marginStart="8dp"/>
         </LinearLayout>
 
