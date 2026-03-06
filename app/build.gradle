@@ -3,9 +3,10 @@ plugins {
 }
 
 android {
-    namespace 'com.voiceassistant'
-    compileSdk 34
-
+    namespace "com.voiceassistant"
+    compileSdkVersion 34
+    ...
+}
     defaultConfig {
         applicationId "com.voiceassistant"
         minSdk 26
