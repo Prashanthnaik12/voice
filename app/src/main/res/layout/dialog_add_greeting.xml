@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#0F1729">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trigger phrase (e.g. hi mama)"
+        android:textColor="#94A3B8"
+        android:textSize="13sp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/etTrigger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="hi mama"
+        android:textColor="#E2E8F0"
+        android:textColorHint="#475569"
+        android:inputType="text"
+        android:background="@drawable/spinner_bg"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Response (e.g. చెప్పు మామా)"
+        android:textColor="#94A3B8"
+        android:textSize="13sp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/etResponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="చెప్పు మామా"
+        android:textColor="#E2E8F0"
+        android:textColorHint="#475569"
+        android:inputType="text"
+        android:background="@drawable/spinner_bg"
+        android:padding="10dp"/>
+
+</LinearLayout>

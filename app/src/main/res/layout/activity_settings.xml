@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#050A14"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NOVA Voice Assistant v1.0\n\nHow to use:\n\n• Tap the mic button and speak\n• Say commands in English, Telugu, Kannada, or Hindi\n• Enable Background Listening to use even when app is closed\n• Add custom greetings (e.g. 'Hi Mama' → 'చెప్పు మామా')\n• Add custom contacts by nickname for voice calling\n\nCommands work 100% offline - no internet needed!\n\nBuilt with Android SpeechRecognizer + TextToSpeech API"
+        android:textColor="#94A3B8"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"/>
+</LinearLayout>

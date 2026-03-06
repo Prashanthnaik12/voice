@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A14"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOVA"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="#93C5FD"
+                android:fontFamily="monospace"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tvOfflineBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● OFFLINE"
+                android:textSize="11sp"
+                android:textColor="#10B981"
+                android:fontFamily="monospace"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/badge_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"/>
+        </RelativeLayout>
+
+        <!-- Language Selector -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Language / భాష / ಭಾಷೆ / भाषा"
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            android:layout_marginBottom="6dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/spinner_bg"
+            android:padding="8dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Mic Button & Waveform -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/card_bg"
+            android:layout_marginBottom="16dp">
+
+            <!-- Waveform -->
+            <LinearLayout
+                android:id="@+id/waveformContainer"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Mic Button -->
+            <ImageButton
+                android:id="@+id/btnMic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_mic"
+                android:background="@drawable/mic_button_bg"
+                android:contentDescription="Microphone"/>
+        </LinearLayout>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap mic to speak"
+            android:textColor="#93C5FD"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Transcript -->
+        <TextView
+            android:id="@+id/tvTranscript"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#10B981"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Last Command Response -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Response"
+                android:textColor="#475569"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tvLastCommand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ready..."
+                android:textColor="#E2E8F0"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <!-- Wake Word Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🗣️ Wake Word: \"Hi Mama\""
+                        android:textColor="#E2E8F0"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Say 'Hi Mama' → NOVA wakes up"
+                        android:textColor="#475569"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchWakeWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="#10B981"
+                    android:trackTint="#0D2E1F"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvWakeStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wake word disabled"
+                android:textColor="#475569"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Background Service Toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Background Listening"
+                    android:textColor="#E2E8F0"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Listen even when app is closed"
+                    android:textColor="#475569"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switchBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="#3B82F6"
+                android:trackTint="#1E3A5F"/>
+        </LinearLayout>
+
+        <!-- Quick Commands Reference -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample Commands"
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎤 \"Open WhatsApp\" / \"WhatsApp తెరవు\"\n🎵 \"Play music\" / \"పాట వేసు\"\n⏭ \"Next\" / \"తదుపరి\" / \"अगला\"\n⏮ \"Previous\" / \"వెనుకటి\"\n📞 \"Call Mama\" / \"Mama కి కాల్ చేయి\"\n👋 \"Hi mama\" → \"చెప్పు మామా\"\n🔊 \"Volume up\" / \"শব্দ বাড়াও\"\n💡 \"Torch on\" / \"టార్చ్ వేయి\""
+                android:textColor="#64748B"
+                android:textSize="13sp"
+                android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnContacts"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Custom Contacts"
+                android:textSize="13sp"
+                android:backgroundTint="#1E293B"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnSettings"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Settings"
+                android:textSize="13sp"
+                android:backgroundTint="#1E293B"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

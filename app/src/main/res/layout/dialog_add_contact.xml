@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#0F1729">
+
+    <EditText android:id="@+id/etName"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Contact name (e.g. mama, anna)" android:inputType="text"
+        android:textColor="#E2E8F0" android:textColorHint="#475569"
+        android:background="@drawable/spinner_bg" android:padding="10dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText android:id="@+id/etNumber"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Phone number" android:inputType="phone"
+        android:textColor="#E2E8F0" android:textColorHint="#475569"
+        android:background="@drawable/spinner_bg" android:padding="10dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText android:id="@+id/etNicknames"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Nicknames in other languages (optional)"
+        android:textColor="#E2E8F0" android:textColorHint="#475569"
+        android:background="@drawable/spinner_bg" android:padding="10dp"/>
+
+</LinearLayout>
