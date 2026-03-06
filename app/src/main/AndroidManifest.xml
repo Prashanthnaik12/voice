@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.voiceassistant">
 
-    <!-- Permissions -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -17,7 +17,6 @@
         tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SET_ALARM" />
-    <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-feature android:name="android.hardware.microphone" android:required="true" />
 
@@ -29,10 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="false"
-        tools:ignore="UnusedAttribute"
-        xmlns:tools="http://schemas.android.com/tools">
+        tools:ignore="UnusedAttribute">
 
-        <!-- Main Activity -->
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"
@@ -44,33 +41,28 @@
             </intent-filter>
         </activity>
 
-        <!-- Settings Activity -->
         <activity
             android:name=".activities.SettingsActivity"
             android:exported="false"
             android:label="@string/settings" />
 
-        <!-- Contacts Activity -->
         <activity
             android:name=".activities.ContactsActivity"
             android:exported="false"
             android:label="@string/custom_contacts" />
 
-        <!-- Wake Word Detection Service -->
         <service
             android:name=".services.WakeWordService"
             android:exported="false"
             android:foregroundServiceType="microphone"
             android:label="NOVA Wake Word Service" />
 
-        <!-- Background Voice Service -->
         <service
             android:name=".services.VoiceListenerService"
             android:exported="false"
             android:foregroundServiceType="microphone"
             android:label="Voice Assistant Service" />
 
-        <!-- Boot Receiver - start service on boot -->
         <receiver
             android:name=".receivers.BootReceiver"
             android:exported="true">
@@ -81,5 +73,4 @@
         </receiver>
 
     </application>
-
 </manifest>
